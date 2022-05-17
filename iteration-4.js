@@ -6,11 +6,17 @@ const miArray = [
 ];
 
 function findArrayIndex(array, text) {
-    return array.indexOf(text) !== -1
-      ? text + " esta en la posicion " + array.indexOf(text)
-      : text + " no está en el array";
+    return array.indexOf(text);
   }
   
-  console.log(findArrayIndex(miArray, "Salamandra"));
-  console.log(findArrayIndex(miArray, "Perro"));
+  function removeItem(array, text) {
+    let position = findArrayIndex(array, text);
+    if (position !== -1) {
+      array.splice(position, 1);
+    }
+    return array;
+  }
+  
+  console.log(removeItem(miArray, "Mosquito")); 
+  console.log(removeItem(miArray, "Perro"));
   
